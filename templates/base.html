@@ -14,12 +14,12 @@
     <nav class="amber darken-4">
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Welcome</a></li>
         <li><a href="#">Register</a></li>
         <li><a href="#">Log In</a></li>
-        <li><a href="#">Recipes</a></li>
+        <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
         <li><a href="#">Log out</a></li>
       </ul>
     </div>
