@@ -1,18 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+    {% for recipe in recipes %}
   <div class="row">
     <div class="col s12 m6">
       <div class="card amber darken-4">
         <div class="card-content white-text">
-          <span class="card-title">Card Title</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+            <h3>{{ recipe.category_name }}</h3>
+          <strong class="card-title">{{ recipe.recipe_name }}</strong>
+          <p>{{ recipe.ingredients }}</p>
+          <p>{{ recipe.prep_time }}</p>
+          <p>{{ recipe.cook_time }}</p>
+          <p>{{ recipe.intructions }}</p>
         </div>
-        
+        <span class="text-color">Created by: </span><strong class="text-color">{{ recipe.created}}</strong>
       </div>
     </div>
   </div>
-
+    {% endfor %}
 {% endblock %}
