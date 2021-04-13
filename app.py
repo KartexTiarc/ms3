@@ -33,7 +33,7 @@ def get_recipes():
 def register():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower})
+            {"username": request.form.get("username").lower()})
 
         if existing_user:
             flash("Username already in use. Please take another")
