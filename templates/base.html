@@ -22,7 +22,7 @@
         <li><a href="{{ url_for('welcome') }}">Welcome</a></li>
         {% if session.user %}
         <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-        <li><a href="#">Add Recipes</a></li>
+        <li><a href="{{ url_for('add_recipe') }}">Add Recipes</a></li>
         <li><a href="{{ url_for('logout') }}">Log out</a></li>
         {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>
