@@ -1,3 +1,12 @@
 .text-color {
     color: #fafafa;
 }
+
+.btn-small {
+    margin: 7px;
+}
+
+.collapsible-header .col strong {
+    margin: 5px;
+    line-height: 42px;
+}
