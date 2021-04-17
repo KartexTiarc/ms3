@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Edit recipe</h3>
+    
+<div class="row card-panel">
+    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+    <div>
+    <div class="input-field col s12">
+    <select id="category_name" name="category_name" class="validate" required>
+      <option value="" disabled>Choose category</option>
+    {% for category in categories %}
+        {% if category.category_name == recipe.category_name %} 
+            <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+        {% else %}
+            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+        {% endif %}
+    {% endfor %}
+    </select>
+    <label>Recipe category</label>
+  </div>
+    </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="recipe_name" name="recipe_name" type="text" minlength="5" maxlength="50" value="{{ recipe.recipe_name }}" class="validate" required>
+          <label for="recipe_name">recipe</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="ingredients" name="ingredients" type="text" minlength="5" maxlength="200" class="validate" required>
+          <label for="ingredients">ingredients</label>
+        </div>
+      </div>
+      
+        <div class="input-field col s12 m6">
+          <input id="prep_time" name="prep_time" type="text" minlength="4" maxlength="20" class="validate" required>
+          <label for="prep_time">Prep time</label>
+        </div>
+     
+      
+        <div class="input-field col s12 m6">
+          <input id="cook_time" name="cook_time" type="text" minlength="4" maxlength="20" class="validate" required>
+          <label for="cook_time">Cook time</label>
+        
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="intructions" name="intructions" type="text" minlength="10" maxlength="500" class="validate" required>
+          <label for="intructions">intructions</label>
+        </div>
+      </div>
+       <div class="row">
+           <!--Cancel button-->
+           <a href="{{ url_for('get_recipes') }}" class="btn-large red">Cancel <i class="fas fa-times-circle"></i></a>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Edit Recipe
+    <i class="fas fa-edit right"></i>
+  </button>
+    </form>
+  </div>
+
+{% endblock %}

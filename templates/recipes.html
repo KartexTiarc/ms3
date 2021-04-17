@@ -1,35 +1,43 @@
 {% extends "base.html" %}
 {% block content %}
+
+    <h1>Recipes</h1>
+
     {% if recipes|length > 0 %}
-<ul class="collapsible col s12 m8">
+        <ul class="collapsible col s12 m8">
         {% for recipe in recipes %}
-    <li>
-      <div class="collapsible-header">
-          <i class="fas fa-caret-down"></i>
-          <strong>{{ recipe.recipe_name }}</strong>
-        </div>
-      <div class="collapsible-body">
-      <strong>{{ recipe.category_name }}</strong>
-      <p>
-          {{ recipe.ingredients }}
-      </p>
-      <p>
-        {{ recipe.prep_time }}
-      </p>
-      <p>
-        {{ recipe.cook_time }}
-      </p>
-      <p>
-        {{ recipe.intructions }}
-      </p>
+            <li>
+            <div class="collapsible-header">
+                <div class="col s3">
+            <i class="fas fa-caret-down"></i>
+            <a href="" class="btn-small green accent-3">Finished</a>
+            <a href="" class="btn-small deep-orange darken-1">Edit</a>
+            <strong>{{ recipe.recipe_name }}</strong>
+            </div>
+            </div>
+            <div class="collapsible-body">
+                <strong>{{ recipe.category_name }}</strong>
+            <p>
+                {{ recipe.ingredients }}
+            </p>
+            <p>
+                {{ recipe.prep_time }}
+            </p>
+            <p>
+            {{ recipe.cook_time }}
+            </p>
+            <p>
+            {{ recipe.intructions }}
+            </p>
       
-      <p><em>Recipe by: {{ recipe.created_by }}</em></p>
-      </div>
-    </li>
-  </ul>
+            <p><em>Recipe by: {{ recipe.created_by }}</em></p>
+            </div>
+            </li>
+        </ul>
         {% endfor %}
 
     {% else %}
         <h3>No recipes found</h3>
     {% endif %}
+
 {% endblock %}
