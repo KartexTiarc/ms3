@@ -1,21 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
+<ul class="collapsible col s12 m8 center-align">
     {% for recipe in recipes %}
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card amber darken-4">
-        <div class="card-content white-text">
-            <h3>{{ recipe.category_name }}</h3>
-          <strong class="card-title">{{ recipe.recipe_name }}</strong>
-          <p>{{ recipe.ingredients }}</p>
-          <p>{{ recipe.prep_time }}</p>
-          <p>{{ recipe.cook_time }}</p>
-          <p>{{ recipe.intructions }}</p>
+    <li>
+      <div class="collapsible-header">
+          <i class="fas fa-caret-down"></i>
+          <strong>{{ recipe.recipe_name }}</strong>
         </div>
-        <span class="text-color">Created by: </span><strong class="text-color">{{ recipe.created}}</strong>
+      <div class="collapsible-body">
+      <strong>{{ recipe.category_name }}</strong>
+      <p>
+          {{ recipe.ingredients }}
+      </p>
+      <p>
+        {{ recipe.prep_time }}
+      </p>
+      <p>
+        {{ recipe.cook_time }}
+      </p>
+      <p>
+        {{ recipe.intructions }}
+      </p>
       </div>
-    </div>
-  </div>
+    </li>
+  </ul>
     {% endfor %}
 {% endblock %}
