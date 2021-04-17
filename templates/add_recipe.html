@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Add a recipe</h3>
+
+<div class="row card-panel">
+    <form class="col s12" method="POST" action="">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="recipe" name="recipe" type="text" class="validate">
+          <label for="recipe">recipe</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="ingredients" name="ingredients" type="text" class="validate">
+          <label for="ingredients">ingredients</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="prep_time" name="prep_time" type="text" class="validate">
+          <label for="prep_time">Prep time</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="cook_time" name="cook_time" type="text" class="validate">
+          <label for="cook_time">Cook time</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="instructions" name="instructions" type="text" class="validate">
+          <label for="instructions">instructions</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
