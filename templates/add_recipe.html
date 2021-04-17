@@ -2,12 +2,12 @@
 {% block content %}
 
 <h3>Add a recipe</h3>
-
+    
 <div class="row card-panel">
     <form class="col s12" method="POST" action="">
     <div>
     <div class="input-field col s12">
-    <select>
+    <select id="category_name" name="category_name" class="validate" required>
       <option value="" disabled selected>Choose category</option>
       {% for category in categories %}
       <option value="{{ category.category_name }}">{{ category.category_name }}</option>
@@ -18,8 +18,8 @@
     </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="recipe" name="recipe" type="text" minlength="5" maxlength="50" class="validate" required>
-          <label for="recipe">recipe</label>
+          <input id="recipe_name" name="recipe_name" type="text" minlength="5" maxlength="50" class="validate" required>
+          <label for="recipe_name">recipe</label>
         </div>
         <div class="input-field col s12">
           <input id="ingredients" name="ingredients" type="text" minlength="5" maxlength="200" class="validate" required>

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-
-<ul class="collapsible col s12 m8 center-align">
-    {% for recipe in recipes %}
+    {% if recipes|length > 0 %}
+<ul class="collapsible col s12 m8">
+        {% for recipe in recipes %}
     <li>
       <div class="collapsible-header">
           <i class="fas fa-caret-down"></i>
@@ -22,8 +22,14 @@
       <p>
         {{ recipe.intructions }}
       </p>
+      
+      <p><em>Recipe by: {{ recipe.created_by }}</em></p>
       </div>
     </li>
   </ul>
-    {% endfor %}
+        {% endfor %}
+
+    {% else %}
+        <h3>No recipes found</h3>
+    {% endif %}
 {% endblock %}
