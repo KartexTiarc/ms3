@@ -20,21 +20,28 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('welcome') }}">Welcome</a></li>
+        {% if session.user %}
+        <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+        <li><a href="{{ url_for('add_recipes') }}">Recipes</a></li>
+        <li><a href="{{ url_for('logout') }}">Log out</a></li>
+        {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-        <li><a href="#">Log out</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>
 <!-- Mobile Navbar -->
   <ul class="sidenav" id="mobile-demo">
       <li><h4 class="center-align amber darken-4">Recipe gather</h4></li>
-     <li><a href="{{ url_for('welcome') }}">Welcome</a></li>
+       <li><a href="{{ url_for('welcome') }}">Welcome</a></li>
+        {% if session.user %}
+        <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
+        <li><a href="{{ url_for('logout') }}">Log out</a></li>
+        {% else %}
         <li><a href="{{ url_for('register') }}">Register</a></li>
         <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="{{ url_for('get_recipes') }}">Recipes</a></li>
-        <li><a href="#">Log out</a></li>
+        {% endif %}
   </ul>
   </header>
   <section>
