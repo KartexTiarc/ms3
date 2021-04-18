@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1>Recipes</h1>
+    <h1 class="center-align">Recipes</h1>
 
     {% if recipes|length > 0 %}
-        <ul class="collapsible col s12 m8">
-        {% for recipe in recipes %}
+<ul class="collapsible">
+        {% for recipe in recipes%}
             <li>
             <div class="collapsible-header">
                 <div class="col s3">
             <i class="fas fa-caret-down"></i>
             <a href="" class="btn-small green accent-3">Finished</a>
-            <a href="" class="btn-small deep-orange darken-1">Edit</a>
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small deep-orange darken-1">Edit</a>
             <strong>{{ recipe.recipe_name }}</strong>
             </div>
             </div>
@@ -24,18 +24,18 @@
                 {{ recipe.prep_time }}
             </p>
             <p>
-            {{ recipe.cook_time }}
+                {{ recipe.cook_time }}
             </p>
             <p>
-            {{ recipe.intructions }}
+                {{ recipe.intructions }}
             </p>
       
             <p><em>Recipe by: {{ recipe.created_by }}</em></p>
             </div>
             </li>
-        </ul>
+        
         {% endfor %}
-
+            </ul>
     {% else %}
         <h3>No recipes found</h3>
     {% endif %}
