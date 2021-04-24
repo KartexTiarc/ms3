@@ -86,6 +86,13 @@ def logout():
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        existing_recipe = mongo.db.recipes.find_one(
+            {"recipe_name": request.form.get("recipe_name")})
+
+        if existing_recipe:
+            flash("Recipe already exist. Please insert another name")
+            return redirect(url_for("add_recipe"))
+            
         recipe = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
