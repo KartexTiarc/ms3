@@ -85,14 +85,14 @@ def logout():
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    if request.method == "POST":
+    if request.method == "POST": #Can't add the same recipe name
         existing_recipe = mongo.db.recipes.find_one(
             {"recipe_name": request.form.get("recipe_name")})
 
         if existing_recipe:
             flash("Recipe already exist. Please insert another name")
             return redirect(url_for("add_recipe"))
-            
+
         recipe = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
@@ -112,7 +112,13 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    if request.method == "POST":
+    if request.method == "POST": #Can't change the recipe to a name that already exist.
+        existing_recipe = mongo.db.recipes.find_one(
+            {"recipe_name": request.form.get("recipe_name")})
+
+        if existing_recipe:
+            flash("This recipe name already exist. Pick another")
+            return redirect(url_for("add_recipe"))
         submit = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
@@ -174,6 +180,11 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Deleted")
     return redirect(url_for("get_categories"))
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
