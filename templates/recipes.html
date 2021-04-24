@@ -12,19 +12,19 @@
           <label for="query">Search recipe</label>
         </div>
         <div class="col s12 m4">
-            <a href="{{ url_for('get_recipes') }}" class="red btn">Reset</a>
-            <button type="submit" class="btn"><i class="fas fa-search"></i>
+            <button type="submit" class="btn green accent-4"><i class="fas fa-search"></i>
                 Search
             </button>
+            <a href="{{ url_for('get_recipes') }}" class="red btn">Reset</a>
         </div>
       </div>
     </form>
   </div>
 
-
-    {% if recipes|length > 0 %}
     
-    <ul class="collapsible col s12 m6">
+    {% if recipes|length > 0 %}
+
+    <ul class="collapsible">
         {% for recipe in recipes%}
         
             <li class="card-panel">
@@ -35,7 +35,7 @@
                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red darken-2">Delete</a>
             {% elif session.user|lower == recipe.created_by|lower %}
                 
-                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small deep-orange darken-1">Edit</a>
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small deep-orange green accent-4">Edit</a>
             {% endif %}
             <strong class="header-site">{{ recipe.recipe_name }}</strong>
             </div>
@@ -66,6 +66,7 @@
             
     {% else %}
         <h3>No recipes found</h3>
+    
     {% endif %}
 
 {% endblock %}
