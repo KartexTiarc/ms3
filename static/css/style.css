@@ -1,5 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400;500;700;800;900&family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+.header-site {
+    font-family: 'mitr', sans-serif;
+}
+
+.welcome-image {
+    background: url('..assets/images/kitchen.jpg');
+    height: 75vh;
+    background-size: auto;
+}
+
+#recipe_navbar {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
 .text-color {
     color: #fafafa;
+}
+
+.info-text {
+    font-family: 'Arima Madurai', cursive;
 }
 
 .btn-small {
