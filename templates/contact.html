@@ -1,31 +1,41 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+      <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_lm6sGx05uVcHW4yxGkSGd"); 
+   })();
+</script>
+
 <h1 class="center-align header-site">Contact form</h1>
 
 <div class="row">
     <form class="col s12 m8 offset-m2" onsubmit="return sendMail(this);">
       <div class="row">
         <div class="input-field col s6">
-          <input id="fname" type="text" class="validate" required>
+          <input id="fname" name="fname" type="text" class="form-control" required>
           <label for="fname">First Name</label>
         </div>
         <div class="input-field col s6">
-          <input id="lname" type="text" class="validate" required>
+          <input id="lname" name="lname" type="text" class="form-control" required>
           <label for="lname">Last Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
             <i class="fas fa-envelope"></i>
-          <input id="email" type="email" class="validate">
+          <input id="email" name="email" type="email" class="form-control">
           <label for="email">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="fas fa-pen"></i>
-          <textarea placeholder="Question" id="question" class="materialize-textarea"></textarea>
+          <textarea placeholder="Question" name="question" id="question" class="materialize-textarea"></textarea>
           <label for="question"></label>
         </div>
       </div>
