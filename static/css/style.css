@@ -5,12 +5,6 @@
     font-family: 'mitr', sans-serif;
 }
 
-.welcome-image {
-    background: url('..assets/images/kitchen.jpg');
-    height: 75vh;
-    background-size: auto;
-}
-
 #recipe_navbar {
     padding-left: 2%;
     padding-right: 2%;
