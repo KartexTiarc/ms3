@@ -19,7 +19,7 @@
     <div class="nav-wrapper" id="recipe_navbar">
       <a href="{{ url_for('welcome') }}" class="brand-logo">Recipe gather</a>
       <i class="fas fa-utensils right"></i>
-      <a href="{{ url_for('welcome') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars">menu</i></a>
+      <a href="{{ url_for('welcome') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('welcome') }}">Welcome</a></li>
         {% if session.user %}
