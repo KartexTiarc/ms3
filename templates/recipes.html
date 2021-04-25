@@ -23,8 +23,8 @@
 
     
     {% if recipes|length > 0 %}
-
-    <ul class="collapsible">
+       <ul class="collapsible">
+    
         {% for recipe in recipes%}
         
             <li>
@@ -58,11 +58,11 @@
             <p class="info-text"><em>Recipe by: {{ recipe.created_by }}</em></p>
             </div>
             </li>
-      
+     
         {% endfor %}
-            </ul>
+          
            
-         
+          </ul>
             
     {% else %}
         <h3>No recipes found</h3>
