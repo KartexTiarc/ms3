@@ -40,14 +40,17 @@ def search():
 def register():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username").lower(),
+             "email": request.form.get("email").lower()
+            })
 
         if existing_user:
-            flash("Username already in use. Please take another")
+            flash("Username/email already in use. Please take another")
             return redirect(url_for("register"))
 
         register = {
             "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
