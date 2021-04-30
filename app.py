@@ -135,7 +135,8 @@ def add_recipe():
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    if request.method == "POST": #Can't change the recipe to a name that already exist.
+    if request.method == "POST": 
+        #Can't change the recipe to a name that already exist.
         existing_recipe = mongo.db.recipes.find_one(
             {"recipe_name": request.form.get("recipe_name")})
 
