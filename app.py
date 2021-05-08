@@ -32,7 +32,7 @@ def get_recipes():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    recipes = list(mongo.db.recipes.find({"$text": {"$search":query}}))
+    recipes = list(mongo.db.recipes.find({"$text": {"$search" :query}}))
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -42,7 +42,7 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower(),
              "email": request.form.get("email").lower()
-            })
+             })
 
         if existing_user:
             flash("Username/email already in use. Please take another")
@@ -127,7 +127,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe added")
-        return redirect(url_for("add_recipe"))
+        return redirect(url_for("get_recipes"))
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
@@ -140,9 +140,6 @@ def edit_recipe(recipe_id):
         existing_recipe = mongo.db.recipes.find_one(
             {"recipe_name": request.form.get("recipe_name")})
 
-        if existing_recipe:
-            flash("This recipe name already exist. Pick another")
-            return redirect(url_for("add_recipe"))
         submit = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
@@ -154,6 +151,7 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, submit)
         flash("Recipe Updated")
+        return redirect(url_for("get_recipes"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
