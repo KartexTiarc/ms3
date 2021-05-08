@@ -19,8 +19,8 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-def welcome():
-    return render_template("welcome.html")
+def home():
+    return render_template("home.html")
 
 
 @app.route("/get_recipes")
@@ -48,12 +48,12 @@ def register():
             flash("Username/email already in use. Please take another")
             return redirect(url_for("register"))
 
-        register = {
+        user = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(user)
 
         session["user"] = request.form.get("username").lower()
         flash("Welcome to recipe!")
@@ -77,7 +77,7 @@ def login():
                     return redirect(url_for(
                         "profile", username=session["user"]))
             else:
-                flash("incorrect")
+                flash("Incorret Username/Password")
                 return redirect(url_for("login"))
         
         else:
