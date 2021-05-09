@@ -1,7 +1,48 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Hello there</h1>
+<h1>{{ recipe.recipe_name }}</h1>
 
+
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+          <a href="{{url_for('get_recipe', recipe_id=recipe._id)}}">
+        <div class="card-image">
+            <img src="{{ recipe.img_url }}">
+            <div>
+          <strong class="header-site">{{ recipe.recipe_name }}</strong>
+            </div> 
+       </div><h6>Category</h6>
+          <strong>{{ recipe.category_name }}</strong>
+            <div>
+                <h6>Ingredients</h6>
+            <p class="info-text">
+                {{ recipe.ingredients }}
+            </p></div>
+            <div><h6>Prep Time</h6>
+            <p class="info-text">
+                {{ recipe.prep_time }}
+            </p></div>
+            <div><h6>Cook Time</h6>
+            <p class="info-text">
+                {{ recipe.cook_time }}
+            </p></div>
+            <div><h6>Instructions</h6>
+            <p class="info-text">
+                {{ recipe.intructions }}
+            </p>
+        </div>
+        </a>
+        <div class="card-content">
+        <p class="info-text"><em>Recipe by: {{ recipe.created_by }}</em></p>
+            {% if session.user|lower == recipe.created_by|lower or "admin|lower" %}
+                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small green accent-4">Edit</a>
+                <a class="waves-effect waves-light btn-small red darken-2 modal-trigger" href="#modal1">Delete</a>
+            {% endif %}
+        </div>
+       
+      </div>
+    </div> 
 
 {% endblock%}

@@ -29,10 +29,10 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
-@app.route("/get_recipe")
-def get_recipe():
-    recipe_site = mongo.db.recipe.find()
-    return render_template("recipe.html", recipe=recipe_site)
+@app.route("/recipe/<recipe_id>")
+def get_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=recipe)
 
 
 @app.route("/search", methods=["GET", "POST"])
