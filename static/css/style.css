@@ -26,3 +26,19 @@
     margin: 5px;
     line-height: 42px;
 }
+
+.image-recipe {
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-recipe img {
+    object-fit: cover;
+    height: 100%;
+    width: auto;
+}
