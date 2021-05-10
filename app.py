@@ -96,12 +96,12 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Take the sessions username from the db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
     if session["user"]:
-        return render_template("profile.html", username=username)
-
+        if session["user"] == "admin":
+            recipes = mongo.db.recipes.find()
+        else:
+            recipes = mongo.db.recipes.find({"created_by": username})
+        return render_template("profile.html", recipes=recipes, username=username)
     return redirect(url_for("login"))
 
 
@@ -129,6 +129,7 @@ def add_recipe():
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
             "intructions": request.form.get("intructions"),
+            "img_url": request.form.get("img_url"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -148,6 +149,7 @@ def edit_recipe(recipe_id):
 
         submit = {
             "category_name": request.form.get("category_name"),
+            "img_url": request.form.get("url_img"),
             "recipe_name": request.form.get("recipe_name"),
             "ingredients": request.form.get("ingredients"),
             "prep_time": request.form.get("prep_time"),
