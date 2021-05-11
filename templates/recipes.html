@@ -8,15 +8,19 @@
         {% for recipe in recipes%}
     <div class="col s12 m6 l4">
       <div class="card">
+          
           <a href="{{url_for('get_recipe', recipe_id=recipe._id)}}">
-        <div class="card-image image-recipe">
+        <div class="recipe-card">
+            <div class="card-image image-recipe">
             <img src="{{ recipe.img_url }}">
-            </div>
-            <div>
+            </div></div>
+        
+            <div class="recipe-text">
           <strong class="header-site">{{ recipe.recipe_name }}</strong>
             </div>
+          <div class="recipe-text">      
           <strong>{{ recipe.category_name }}</strong>
-        
+        </div>
         </a>
         <div class="card-content">
         <p class="info-text"><em>Recipe by: {{ recipe.created_by }}</em></p>
