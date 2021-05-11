@@ -97,10 +97,7 @@ def login():
 def profile(username):
     # Take the sessions username from the db
     if session["user"]:
-        if session["user"] == "admin":
-            recipes = mongo.db.recipes.find()
-        else:
-            recipes = mongo.db.recipes.find({"created_by": username})
+        recipes = mongo.db.recipes.find({"created_by": username})
         return render_template("profile.html", recipes=recipes, username=username)
     return redirect(url_for("login"))
 
