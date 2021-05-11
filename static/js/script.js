@@ -15,6 +15,7 @@ function sendMail(contactForm){
     })
     .then(
         function(response) {
+            $("#modal1").modal("open");
             console.log("SUCCESS", response);
         },
         function(error) {
