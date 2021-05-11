@@ -90,6 +90,64 @@ to contribute to the site with recipe that the world can enjoy.
 
 ## Deployment
 
+### GitHub Pages
+
+This site was publiched with [GitHub Pages](https://pages.github.com/). How to create a GitHub page is below. 
+
+1. Go to the GitHub website and create a log in. 
+2. On the left you will see your repositories (if you have created one), select the one you want to set up a page for. 
+3. Above the repositories you will see a menu. To the right you will find one that say "Settings". 
+4. Then go down to GitHub pages.
+5. Choose master as source and then you click save. 
+6. Refresh the site and scroll back to GitHub pages and there is your link. 
+
+### Forking the GitHub Repository
+
+By forking the GitHub repository it will make a copy of the original repository on the GitHub 
+account to view and/or make changes without affecting the original.
+
+1. Log in to GitHub and locate the GitHub repository.
+2. At the top to the right of the page is the "Fork" Button.
+3. Press it and now it should copy the original repository to your GitHub account
+
+### Gitpod
+
+When you have a Github you need to connect it to [Gitpod](https://www.gitpod.io/docs/getting-started). 
+
+1. Go to Github website and go to Browser extensions.
+2. Choose between for Google Chrome or Firefox.
+3. A user can then see the extension in the toolbar. 
+
+### Heroku
+
+Connect to Heroku. 
+
+1. In Heroku create a app. It need to be unique name to be able to function.
+2. Link the app to your Github repository by going under "Deply".
+3. Choice your "Deployment method" to Github.
+4. Then go to "Settings tab" and then add the corresponding "Config Variables" that is 
+MONGO_URI mongodb+srv://...
+IP 0.0.0.0
+PORT 5000
+SECRET_KEY secretkey 
+5. You will need to create a "procfile" in your Gitpod with the command
+echo web: python app.py > Procfile.
+
+### MongoDB
+
+MongoDB connect [MongoDB](https://www.mongodb.com/)
+
+1. Create a MongoDB account. 
+2. Create a "Cluster" and use the free cluster.
+3. Use cloud server "aws" and then wich reagion you are in. 
+4. Create then a cluster.
+5. Add a new "Database". 
+6. Add then IP adress and "allow access from anywhere".
+7. Click on "Collection" and then click "Add My Own Data".
+8. Click on "Insert Documents". Now you can create what kind of data you want. 
+9. Click on "Connect" and then on Connect with mongo shell where the command line to able to connect to the database. 
+
+
 ### Publishing
 
 ### Know Bugs

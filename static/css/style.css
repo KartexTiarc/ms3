@@ -18,6 +18,11 @@
     font-family: 'Arima Madurai', cursive;
 }
 
+.recipe-text {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
 .btn-small {
     margin: 7px;
 }
@@ -27,11 +32,22 @@
     line-height: 42px;
 }
 
+.recipe-card {
+    display: flex;
+}
+
+.index-image{
+    background: url(https://images.unsplash.com/photo-1556909211-36987daf7b4d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80) center no-repeat;
+    background-size: cover;
+    padding-bottom: 400px;
+    width: 100%;
+    margin-top: 100px;
+}
+
 .image-recipe {
-    width: 400px;
+    width: auto;
     height: 400px;
     justify-content: center;
-    display: flex;
     flex-direction: row;
     overflow: hidden;
     position: relative;
