@@ -1,3 +1,5 @@
+<h2 align="center"><img src="./assets/images/mockup.png">
+
 <h1 align="center">Recipe center</h1>
 
 ## About
@@ -152,9 +154,14 @@ MongoDB connect [MongoDB](https://www.mongodb.com/)
 
 ### Know Bugs
 
+- When deleting categories it deleting wrong category. 
+-
+
 ## Credits
 
  - Credit to my mentor Maranatha Ilesanmi for his guidance. 
+ - Code Institute tutors
+ - Picture for index site Becca Tapert [Kitchen] (https://unsplash.com/photos/mDOGXiuVb4M)
 
 ### Code
 

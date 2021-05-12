@@ -45,6 +45,7 @@ def search():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
+        # Check if username exist in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower(),
              "email": request.form.get("email").lower()
@@ -217,4 +218,4 @@ def contact():
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
