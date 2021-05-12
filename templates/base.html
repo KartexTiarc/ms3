@@ -16,7 +16,7 @@
     <header>
     <!-- Top Navbar -->
     <nav class="nav-extended amber darken-4">
-    <div class="nav-wrapper" id="recipe_navbar">
+    <div class="nav-wrapper header-site" id="recipe_navbar">
       <i class="fas fa-utensils left"></i>
       <a href="{{ url_for('index') }}" class="brand-logo">Recipe gather</a>
       <a href="{{ url_for('index') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
@@ -72,7 +72,23 @@
 <main class="container">
         {% block content %}
         {% endblock %}
+
+            
 </main>
+<footer class="page-footer footer-recipe amber darken-4">
+<div class="container header-site">
+    <div class="row">
+         <div class="col l6 s12">
+                <h5 class="text-color">Visit our social links</h5>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                  <a class="text-color" href="#!"><i class="fab fa-facebook-square recipe-footer"></i></a>
+                  <a class="text-color" href="#!"><i class="fab fa-instagram recipe-footer"></i></a>
+                  <a class="text-color" href="#!"><i class="fab fa-twitter-square recipe-footer"></i></a>
+              </div>
+            </div>
+          </div>
+        </footer>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
