@@ -42,6 +42,7 @@
     padding-bottom: 400px;
     width: 100%;
     margin-top: 100px;
+    margin-bottom: 5%;
 }
 
 .image-recipe {
@@ -57,4 +58,20 @@
     object-fit: cover;
     height: 100%;
     width: auto;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
+.recipe-footer {
+    padding-top: 2%;
+    padding-right: 5%;
+    font-size: 30px;
 }
