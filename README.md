@@ -1,6 +1,8 @@
 <h2 align="center"><img src="./assets/images/mockup.png">
 
-<h1 align="center">Recipe center</h1>
+[Recipe Gather](https://kartextiarc.github.io/Vaxholm/)
+
+[GitHub](https://github.com/KartexTiarc/ms3)
 
 ## About
 
