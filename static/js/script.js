@@ -3,8 +3,12 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
     $('select').formSelect();
     $('.modal').modal();
+    $('.recipe-area').val();
+  M.textareaAutoResize($('.recipe-area'));
   });
 
+
+  
 
 function sendMail(contactForm){
     emailjs.send("service_sx70hpu","recipes", {

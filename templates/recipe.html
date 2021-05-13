@@ -9,36 +9,39 @@
       <div class="card">
           <!-- Recipe card more information -->
         <div class="card-image">
-            <img src="{{ recipe.img_url }}">
-            <div>
+            <img src="{{ recipe.img_url }}" alt="{{ recipe.recipe_name }}">
+                <div class="recipe-text-card">
           <h3><strong class="header-site">{{ recipe.recipe_name }}</strong></h3>
             </div> 
        </div>
-       <div class="col m3"><h6>Category</h6>
-          <strong>{{ recipe.category_name }}</strong></div>
-            <div class="col m3"><h6>Prep Time</h6>
-            <p class="info-text">
+       <div class="col m3 recipe-text-card"><h6 class="recipe-text-card">Category</h6>
+          <strong class="recipe-text-card">{{ recipe.category_name }}</strong></div>
+            <div class="col m3">
+                <h6 class="recipe-text-card">Prep Time</h6>
+            <p class="recipe-text-card">
                 {{ recipe.prep_time }}
             </p></div>
-            <div class="col m3"><h6>Cook Time</h6>
-            <p class="info-text">
+            <div class="col m3">
+                <h6 class="recipe-text-card">Cook Time</h6>
+            <p class="recipe-text-card">
                 {{ recipe.cook_time }}
             </p></div>
           <div class="row col s6">
-                <h6>Ingredients</h6>
-            <p class="info-text">
+                <h6 class="recipe-text-card">Ingredients</h6>
+            <p class="recipe-text-card">
                 {{ recipe.ingredients }}
             </p></div>
-                <div class="row col s12"><h6>Instructions</h6>
-            <p class="info-text">
+                <div class="row col s12">
+                    <h6 class="recipe-text-card">Instructions</h6>
+            <p class="recipe-text-card">
                 {{ recipe.intructions }}
             </p>
         </div>
         <div class="card-content row">
-        <p class="info-text left"><em>Recipe by: {{ recipe.created_by }}</em></p>
+        <p class="left"><em>Recipe by: {{ recipe.created_by }}</em></p>
         </div>
         <div>
-            {% if session.user|lower == recipe.created_by|lower or "admin|lower" %}
+            {% if session.user|lower == recipe.created_by|lower or session.user|lower == recipe.created_by|lower %}
                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn-small green accent-4">Edit</a>
                 <a class="waves-effect waves-light btn-small red darken-2 modal-trigger" href="#modal1">Delete</a>
             {% endif %}

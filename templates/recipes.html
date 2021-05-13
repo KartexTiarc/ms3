@@ -3,6 +3,24 @@
 
     <h1 class="center-align header-site">Recipes</h1>
 
+ <div class="row">
+    <form action="{{ url_for('search') }}" method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s12 m6 offset-m2">
+          <input type="text" name="query" id="query" minlength="3" class="validate">
+          <label for="query">Search recipe</label>
+        </div>
+        <div class="col s12 m4 info-text">
+            <button type="submit" class="btn green accent-4">
+                Search
+            </button>
+            <a href="{{ url_for('get_recipes') }}" class="red btn">Reset</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
   <div class="row">
     {% if recipes|length > 0 %}
         {% for recipe in recipes%}
@@ -12,7 +30,7 @@
           <a href="{{url_for('get_recipe', recipe_id=recipe._id)}}">
         <div class="recipe-card">
             <div class="card-image image-recipe">
-            <img src="{{ recipe.img_url }}" alt="{{ recipe.img_des }}">
+            <img src="{{ recipe.img_url }}" alt="{{ recipe.recipe_name }}">
             </div></div>
         
             <div class="recipe-text">

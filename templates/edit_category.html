@@ -18,7 +18,7 @@
             <button class="btn-large green accent-4">
                 Save Category  
             </button>
-            <a class="waves-effect waves-light btn-large red darken-2 modal-trigger" href="#modal1">Delete</a>
+            <a href="{{ url_for('get_categories') }}" class="btn-large waves-effect waves-light red accent-4">Cancel</a>
           </div>
 
       </div>
@@ -31,8 +31,8 @@
       <h4>Are you sure you want to delete?</h4>
     </div>
     <div class="modal-footer">
-    <button type="button" class="btn-small green accent-4 modal-close" data-dismiss="modal1">Cancel</button>
-     <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn-small red darken-2">Delete</a>
+    <button type="button" class="btn-small green accent-4 modal-close" data-dismiss="modal1">Cancel</button>   
+    <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn-small red darken-2">Delete</a>
     </div>
   </div>
 
