@@ -12,7 +12,7 @@
           <a href="{{url_for('get_recipe', recipe_id=recipe._id)}}">
         <div class="recipe-card">
             <div class="card-image image-recipe">
-            <img src="{{ recipe.img_url }}">
+            <img src="{{ recipe.img_url }}" alt="{{ recipe.img_des }}">
             </div></div>
         
             <div class="recipe-text">

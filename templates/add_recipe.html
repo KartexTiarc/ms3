@@ -50,11 +50,17 @@
           <input id="img_url" name="img_url" type="text" minlength="5" maxlength="200" class="validate" required>
           <label for="img_url">Url link for image</label>
         </div>
+        <div class="input-field col s12">
+          <input id="img_des" name="img_des" type="text" minlength="5" maxlength="40" class="validate" required>
+          <label for="img_des">Image description</label>
+        </div>
       </div>
        <div class="row">
           <button class="btn waves-effect waves-light green accent-4" type="submit" name="action">Submit
     <i class="material-icons right"></i>
   </button>
+  <a href="{{ url_for('get_recipes') }}" class="btn waves-effect waves-light red accent-4">Cancel</a>
+       </div>
     </form>
   </div>
 

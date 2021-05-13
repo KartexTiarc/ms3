@@ -1,6 +1,6 @@
-<h2 align="center"><img src="./assets/images/mockup.png">
+<h2 align="center"><img src="assets/images/mockup.png">
 
-[Recipe Gather](https://kartextiarc.github.io/Vaxholm/)
+[Recipe Gather](http://recipes-to-community.herokuapp.com/)
 
 [GitHub](https://github.com/KartexTiarc/ms3)
 
@@ -44,6 +44,11 @@ to contribute to the site with recipe that the world can enjoy.
  * You can add a recipe if you want with the categories that the admin have added. 
  * User can edit their own recipes. 
 
+ ## Future Features
+
+ * Pagination for the site.
+ * Category names change on recipes when category is changed by admin.
+
 ### Header
 
  - The header for the name on the left site.
@@ -63,18 +68,10 @@ to contribute to the site with recipe that the world can enjoy.
 
 ## Testing
 
- - 
- - 
-
-### Functionality Testing
-
- - 
- - 
-
-### Performance Testing
-
- - 
- - 
+ - [HTML Validator] (https://validator.w3.org/nu/)
+ - [CSS Validator] (https://jigsaw.w3.org/css-validator/)
+ - [WebpageTest] (https://www.webpagetest.org/) <img src="assets/images/testing.png">
+ 
 
 ### Testing User Stories
 
@@ -157,7 +154,6 @@ MongoDB connect [MongoDB](https://www.mongodb.com/)
 ### Know Bugs
 
 - When deleting categories it deleting wrong category. 
--
 
 ## Credits
 
