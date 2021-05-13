@@ -1,4 +1,4 @@
-<h2 align="center"><img src="assets/images/mockup.png">
+<h2 align="center"><img src="/static/assets/images/mockup.png">
 
 [Recipe Gather](http://recipes-to-community.herokuapp.com/)
 
@@ -70,7 +70,8 @@ to contribute to the site with recipe that the world can enjoy.
 
  - [HTML Validator] (https://validator.w3.org/nu/)
  - [CSS Validator] (https://jigsaw.w3.org/css-validator/)
- - [WebpageTest] (https://www.webpagetest.org/) <img src="assets/images/testing.png">
+ - [WebpageTest] (https://www.webpagetest.org/) 
+ - <img src="/static/assets/images/testing.png">
  
 
 ### Testing User Stories
