@@ -4,6 +4,10 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.modal').modal();
     $('.recipe-area').val();
+    $("#fname").attr('required', '');
+    $("#lname").attr('required', '');
+    $("#email").attr('required', '');
+    $("#question").attr('required', '');
   M.textareaAutoResize($('.recipe-area'));
   });
 

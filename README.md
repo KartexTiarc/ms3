@@ -48,6 +48,8 @@ to contribute to the site with recipe that the world can enjoy.
 
  * Pagination for the site.
  * Category names change on recipes when category is changed by admin.
+ * Comment section
+ * Ratings
 
 ### Header
 
@@ -71,6 +73,7 @@ to contribute to the site with recipe that the world can enjoy.
  - [HTML Validator] (https://validator.w3.org/nu/)
  - [CSS Validator] (https://jigsaw.w3.org/css-validator/)
  - [WebpageTest] (https://www.webpagetest.org/) 
+ - [Python validator] (https://extendsclass.com/python-tester.html)
  - <img src="/static/assets/images/testing.png">
  
 

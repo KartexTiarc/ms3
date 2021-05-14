@@ -16,26 +16,26 @@
     <!-- Contact form -->
 
 <div class="row card-panel">
-    <form class="col s12 m8 offset-m2" onsubmit="return sendMail(this);">
+    <form name="myform" class="col s12 m8 offset-m2" onsubmit="return sendMail(this);">
       <div class="row">
         <div class="input-field col s6">
-          <input id="fname" name="fname" type="text" class="form-control" required>
+          <input id="fname" name="fname" type="text" class="form-control" >
           <label for="fname">First Name</label>
         </div>
         <div class="input-field col s6">
-          <input id="lname" name="lname" type="text" class="form-control" required>
+          <input id="lname" name="lname" type="text" class="form-control" >
           <label for="lname">Last Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" name="email" type="email" class="form-control" required>
+          <input id="email" name="email" type="email" class="form-control" >
          <label for="email">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea placeholder="Question" name="question" id="question" class="materialize-textarea recipe-area" required></textarea>
+          <textarea placeholder="Question" name="question" id="question" class="materialize-textarea recipe-area" ></textarea>
           <label for="question"></label>
         </div>
       </div>
